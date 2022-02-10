@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/DialogBox.gd" type="Script" id=1]
+
+[node name="DialogPanel" type="Panel"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -117.0
+margin_right = -11.0
+margin_bottom = -6.0
+rect_min_size = Vector2( 24, 24 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogSound" type="AudioStreamPlayer" parent="."]
+
+[node name="Dialog" type="RichTextLabel" parent="."]
+modulate = Color( 0.105882, 0.105882, 0.0901961, 1 )
+anchor_top = -0.0165848
+anchor_right = 1.0
+anchor_bottom = 0.983415
+margin_left = 24.0
+margin_top = 19.8409
+margin_right = -19.0
+margin_bottom = -11.1591
+bbcode_enabled = true
+text = "Test Text
+Line 2
+Line 3"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="DialogTimer" type="Timer" parent="."]

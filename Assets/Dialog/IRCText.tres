@@ -1,0 +1,144 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Resource
+
+var name = \"IRC\"
+var additive = true
+var read_per_char = false
+var lines = [ 
+	{
+		\"Text\": \"Stuff. Things.\",
+		\"WaitTime\": 4
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\",
+		\"WaitTime\": 2
+	},
+	{
+		\"Text\": \"Stuff. Things.\",
+		\"WaitTime\": 6
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\",
+		\"WaitTime\": 0.1
+	},
+	{
+		\"Text\": \"Stuff. Things.\",
+		\"WaitTime\": 0.2
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\",
+		\"WaitTime\": 0.01
+	},
+	{
+		\"Text\": \"Stuff. Things.\",
+		\"WaitTime\": 0.05
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+	{
+		\"Text\": \"Stuff. Things.\"
+	},
+]
+"
+
+[resource]
+script = SubResource( 1 )
