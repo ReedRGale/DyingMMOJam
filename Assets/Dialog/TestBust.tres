@@ -1,0 +1,45 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Resource
+
+var name = \"TestBust\"
+var read_per_char = true
+var lines = [ 
+	{
+		\"Name\": \"test1\",
+		\"Text\": \"Thist test is in regards to whether we can alternate.\"
+	},
+	{
+		\"Name\": \"test2\",
+		\"Text\": \"BEGIN ALTERNATION!!!\"
+	},
+	{
+		\"Name\": \"test1\",
+		\"Text\": \"Did it work? I hope so.\"
+	},
+	{
+		\"Name\": \"test2\",
+		\"Text\": \"Well, we'll know when this is run, [wave]won't we?[/wave]\"
+	},
+	{
+		\"Name\": \"test1\",
+		\"Text\": \"Oh, is this a new test?\"
+	},
+	{
+		\"Name\": \"test1\",
+		\"Text\": \"I think it is!!\"
+	},
+	{
+		\"Name\": \"test2\",
+		\"Text\": \"Yup! This one's about how clean it looks to say stuff when it's just us.\"
+	},
+	{
+		\"Name\": \"test2\",
+		\"Text\": \"But I guess we already know the results by now. ;)\"
+	},
+]
+"
+
+[resource]
+script = SubResource( 1 )

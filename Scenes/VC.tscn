@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/DialogBox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/ChatBox.png" type="Texture" id=2]
+
+[node name="VC" type="Node2D"]
+
+[node name="Chatbox" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="DialogPanel" parent="." instance=ExtResource( 1 )]
+margin_left = 16.0
+margin_top = 448.0
+margin_right = 944.0
+margin_bottom = 624.0
+dialog_path = "TestBust"

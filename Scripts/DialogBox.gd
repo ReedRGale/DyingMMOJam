@@ -11,6 +11,12 @@ export(String) var dialog_path
 # Whether the dialog will clean itself up when it is complete.
 export(bool) var cleanup = true
 
+# Since we only have two characters, allows for alternation between the two.
+var names = ["test1", "test2"]
+
+# Whether we saw the previous name or not.
+var prev_name = ""
+
 # An array that stores the JSON values containing our dialog.
 var dialog
 
@@ -140,6 +146,7 @@ func _d_should_end():
 
 # Helper function to perform any pre-line changes to the state of the scene.
 func _d_init():
+	setup_theme()
 	
 	# Check if the resource contained an animation to play on this line. 
 	# If so, play it.
@@ -173,6 +180,32 @@ func _d_init():
 		
 	if read_per_char:
 		$Dialog.visible_characters = 0
+
+# Prepares the character-specific elements of the line. 
+func setup_theme():
+	
+	# Denotes that one of the named characters is speaking by displaying a portrait.
+	if dialog[line].has("Name") && dialog[line]["Name"] != prev_name:
+		print("entered")
+		var focus = dialog[line]["Name"].to_lower()
+		var other = names[0] if focus != names[0] else names[1]
+		
+		# Prep the two sprites.
+		# This presumes that the sprites are made to fit somewhere EXACTLY on the screen.
+		# VERY HACKY. But y'know. It'll work.
+		$BustLeft.texture = load("res://Assets/" + focus + "_active.png")
+		$BustRight.texture = load("res://Assets/" + other + "_inactive.png")
+		$BustLeft.global_position = Vector2.ZERO
+		$BustRight.global_position = Vector2.ZERO
+		
+		# Makes sure we don't change the state if the name stays the same.
+		prev_name = focus
+	
+	# Update character's talk sound and voice range.
+	# TODO: in case we have the opportunity to implement this.
+#	$TalkSound.stream = load("res://Assets/" + c_name + "_sound.ogg")
+#	$TalkSound.pitchMin = $TalkSound.voiceRange[c_name][0]
+#	$TalkSound.pitchRange = $TalkSound.voiceRange[c_name][1] 
 
 # Helper function to cleanup the data after we've finished displaying a line.
 func _d_cleanup():

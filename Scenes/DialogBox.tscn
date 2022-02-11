@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/DialogBox.gd" type="Script" id=1]
+[ext_resource path="res://Assets/digital_theme.tres" type="Theme" id=2]
 
 [node name="DialogPanel" type="Panel"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -12,6 +13,7 @@ margin_top = -117.0
 margin_right = -11.0
 margin_bottom = -6.0
 rect_min_size = Vector2( 24, 24 )
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -38,3 +40,9 @@ __meta__ = {
 }
 
 [node name="DialogTimer" type="Timer" parent="."]
+
+[node name="BustLeft" type="Sprite" parent="."]
+centered = false
+
+[node name="BustRight" type="Sprite" parent="."]
+centered = false

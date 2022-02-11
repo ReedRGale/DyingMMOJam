@@ -60,6 +60,9 @@ choice: Whether a 'ChoicePanel' should be opened to collect user input.
 var choice = [["No", "/return", "boolean", false], ["Yes", "/return", "boolean", true]]
 
 
+read_per_char:  True by default. If set to false, lines are read instantly. If a line has 'WaitTime,' then instead of waiting for user input, the next line will simply display after a given period of time.
+
+
 
 ------------------------------------------------------
 

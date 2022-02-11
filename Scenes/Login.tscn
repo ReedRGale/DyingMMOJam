@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/login_button_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/digital_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Login.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/LoginButton.gd" type="Script" id=3]
 
