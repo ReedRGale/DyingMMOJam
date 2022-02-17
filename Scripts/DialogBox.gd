@@ -5,6 +5,9 @@
 
 extends Panel
 
+# The default emotion to display.
+const DEFAULT_EMOTE = "Neutral"
+
 # The path of the dialog, if the DialogBox is being manually.
 export(String) var dialog_path
 
@@ -12,7 +15,7 @@ export(String) var dialog_path
 export(bool) var cleanup = true
 
 # Since we only have two characters, allows for alternation between the two.
-var names = ["test1", "test2"]
+var names = ["Brother", "Sister"]
 
 # Whether we saw the previous name or not.
 var prev_name = ""
@@ -186,17 +189,25 @@ func setup_theme():
 	
 	# Denotes that one of the named characters is speaking by displaying a portrait.
 	if dialog[line].has("Name") && dialog[line]["Name"] != prev_name:
-		print("entered")
-		var focus = dialog[line]["Name"].to_lower()
+		
+		# Denote which character is focus and which is not.
+		var focus = dialog[line]["Name"]
 		var other = names[0] if focus != names[0] else names[1]
+		var fNode = get_node_or_null("Bust" + focus)
+		var oNode = get_node_or_null("Bust" + other)
+		assert(fNode != null, "Focus node was named incorrectly. Maybe check the casing?")
 		
 		# Prep the two sprites.
 		# This presumes that the sprites are made to fit somewhere EXACTLY on the screen.
 		# VERY HACKY. But y'know. It'll work.
-		$BustLeft.texture = load("res://Assets/" + focus + "_active.png")
-		$BustRight.texture = load("res://Assets/" + other + "_inactive.png")
-		$BustLeft.global_position = Vector2.ZERO
-		$BustRight.global_position = Vector2.ZERO
+		var emote = dialog[line]["Emote"] if dialog[line].has("Emote") else DEFAULT_EMOTE
+		fNode.modulate = Color.white
+		fNode.texture = load("res://Assets/" + focus + "_" + emote + ".png")
+		fNode.global_position = Vector2.ZERO
+		if oNode.texture == null:
+			oNode.texture = load("res://Assets/" + other + "_" + DEFAULT_EMOTE + ".png")
+			oNode.global_position = Vector2.ZERO
+		oNode.modulate = Color.lightslategray
 		
 		# Makes sure we don't change the state if the name stays the same.
 		prev_name = focus

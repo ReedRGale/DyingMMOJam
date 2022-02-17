@@ -41,8 +41,8 @@ __meta__ = {
 
 [node name="DialogTimer" type="Timer" parent="."]
 
-[node name="BustLeft" type="Sprite" parent="."]
+[node name="BustSister" type="Sprite" parent="."]
 centered = false
 
-[node name="BustRight" type="Sprite" parent="."]
+[node name="BustBrother" type="Sprite" parent="."]
 centered = false
