@@ -14,6 +14,10 @@ export(String) var dialog_path
 # Whether the dialog will clean itself up when it is complete.
 export(bool) var cleanup = true
 
+export(bool) var use_bust = true
+
+export(Color) var text_color = 0xFF000000
+
 # Since we only have two characters, allows for alternation between the two.
 var names = ["Brother", "Sister"]
 
@@ -60,6 +64,7 @@ func _ready():
 	randomize()
 	find_bs.compile("\\s")
 	$DialogTimer.wait_time = text_speed
+	$Dialog.modulate = text_color
 	
 	# If this DialogBox isn't being instanced by another Node,
 	# then retrieve the requested dialog data.
@@ -188,7 +193,7 @@ func _d_init():
 func setup_theme():
 	
 	# Denotes that one of the named characters is speaking by displaying a portrait.
-	if dialog[line].has("Name") && dialog[line]["Name"] != prev_name:
+	if (use_bust) && dialog[line].has("Name") && dialog[line]["Name"] != prev_name:
 		
 		# Denote which character is focus and which is not.
 		var focus = dialog[line]["Name"]

@@ -1,7 +1,7 @@
 extends Control
 
 # The first scene we load in on ready().
-var initScene = preload("res://Scenes/VC.tscn")
+var initScene = preload("res://Scenes/Alleyway.tscn")
 
 # Have we called a transition yet this playthrough.
 var firstCall = true
